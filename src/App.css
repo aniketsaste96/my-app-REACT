@@ -22,10 +22,14 @@ body {
   /* border:2px solid black;  */
   border-radius: 18px;
   width: 410px;
+  /* height: 500px; */
+  padding: 10px;
 }
 .container:hover {
   cursor: pointer;
-  box-shadow: 10px 10px 10px 10px #888888;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   position: relative;
   top: -5px;
 }
@@ -48,6 +52,7 @@ p {
     minmax(400px, 1fr)
   ); /*RAM to make responsive*/
   gap: 2rem;
+  margin-top: 50px;
 }
 span {
   font-weight: bold;
@@ -59,5 +64,32 @@ span {
 }
 
 body {
-  background-color: #f8f9fb;
+  background-color: white;
+}
+
+.counter-container {
+  gap: 5px;
+  display: flex;
+}
+.counter-container > button {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+input {
+  height: 30px;
+  width: 50%;
+}
+
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem;
+  align-items: center;
+}
+button {
+  width: 50%;
+  height: 50px;
+  gap: 0.1rem;
 }
