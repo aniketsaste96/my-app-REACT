@@ -6,8 +6,8 @@ body {
 }
 
 .movie-poster {
-  width: 400px;
-  height: 640px;
+  width: 420px;
+  height: 500px;
   object-fit: cover;
   border-radius: 20px;
 }
@@ -21,17 +21,21 @@ body {
   /* background-color:orange; */
   /* border:2px solid black;  */
   border-radius: 18px;
-  width: 410px;
+  width: 420px;
+  background-color: rgb(190, 211, 211);
+
   /* height: 500px; */
-  padding: 10px;
+  padding: 5px;
 }
 .container:hover {
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(20, 10, 10, 10) 0px 54px 55px,
+    rgba(255, 255, 255, 0.12) 0px -12px 30px,
+    rgba(250, 247, 247, 0.12) 0px 4px 6px,
+    rgba(255, 255, 255, 0.17) 0px 12px 13px,
+    rgba(255, 255, 255, 0.09) 0px -3px 5px;
   position: relative;
-  top: -5px;
+  top: -10px;
 }
 
 .movie-specs {
@@ -85,11 +89,33 @@ input {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 50%;
   align-items: center;
 }
 button {
   width: 50%;
   height: 50px;
   gap: 0.1rem;
+}
+
+.MuiBox-root {
+  align-items: center;
+  margin-left: 33%;
+}
+.toggle {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5%;
+  background-color: rgb(237, 237, 243);
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+}
+.inputfield {
+  background-color: white;
+  border-radius: 10px;
 }

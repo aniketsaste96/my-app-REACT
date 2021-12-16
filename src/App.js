@@ -8,6 +8,21 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
+import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
+import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
+import LaptopIcon from '@mui/icons-material/Laptop';
+import TvIcon from '@mui/icons-material/Tv';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import ToggleButton from '@mui/material/ToggleButton';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import FolderIcon from '@mui/icons-material/Folder';
+import RestoreIcon from '@mui/icons-material/Restore';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+
 
 
 
@@ -15,6 +30,50 @@ import TextField from '@mui/material/TextField';
 
 export default function App() {
     const movies = [
+        {
+            name: "The Social Network",
+            poster: "https://ogden_images.s3.amazonaws.com/www.lockhaven.com/images/2021/05/19143504/social-network-592x840.jpg",
+            rating: 8.2,
+            summary: "Mark Zuckerberg creates a social networking site, Facebook, with his friend Eduardo's help. Though it turns out to be a successful venture, he severs ties with several people along the way."
+        },
+        {
+            name: "Apollo 13",
+            poster: "https://m.media-amazon.com/images/M/MV5BNjEzYjJmNzgtNDkwNy00MTQ4LTlmMWMtNzA4YjE2NjI0ZDg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+            rating: 8.7,
+            summary: "Apollo 13 was the seventh crewed mission in the Apollo space program and the third meant to land on the Moon. The craft was launched from Kennedy Space Center on April 11, 1970, but the lunar landing was aborted after an oxygen tank in the service module failed two days into the mission."
+        },
+        {
+            name: "Fury",
+            poster: "https://m.media-amazon.com/images/M/MV5BMjA4MDU0NTUyN15BMl5BanBnXkFtZTgwMzQxMzY4MjE@._V1_.jpg",
+            rating: 8.8,
+            summary: "Wardaddy, along with his crew of five members, embarks on a mission that puts many lives in danger. The crew members realise that the odds are against them, but still decide to attack the Nazi army."
+        },
+        {
+            name: "The Pursuit of Happyness",
+            poster: "https://images-na.ssl-images-amazon.com/images/P/B000N6U0E2.jpg",
+            rating: 9.6,
+            summary: "Tired of Chris's professional failures, his wife decides to separate, leaving him financially broke with an unpaid internship in a brokerage firm and his son's custody to deal with."
+        },
+        {
+            name: "1917",
+            poster: "https://movieposters2.com/images/1706798-b.jpg",
+            rating: 9.4,
+            summary: "Two soldiers, assigned the task of delivering a critical message to another battalion, risk their lives for the job in order to prevent them from stepping right into a deadly ambush."
+        },
+
+
+        {
+            name: "Battle Ship",
+            poster: "https://i.ytimg.com/an/nCqDdsZY7RA/13955749347178297462_mq.jpg?v=5f49aa10",
+            rating: 8.7,
+            summary: "An international fleet of ships encounter an alien armada and discover their destructive goals. To defeat their enemies, they are forced to fight an intense battle on sea, land and air."
+        },
+        {
+            name: "Free Guy",
+            poster: "https://www.filmibeat.com/img/320x100x392/popcorn/trending_news/ryan-reynolds-free-guy-5723-20211028191646.jpg",
+            rating: 8.9,
+            summary: "When a bank teller discovers he's actually a background player in an open-world video game, he decides to become the hero of his own story -- one that he can rewrite himself. In a world where there's no limits, he's determined to save the day his way before it's too late, and maybe find a little romance with the coder who conceived him."
+        },
         {
             name: "Iron man 2",
             poster:
@@ -24,7 +83,7 @@ export default function App() {
                 "With the world now aware that he is Iron Man, billionaire inventor Tony Stark (Robert Downey Jr.) faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts (Gwyneth Paltrow) and Rhodes (Don Cheadle) by his side, Tony must forge new alliances and confront a powerful new enemy."
         },
         {
-            name: "No Country for Old Men",
+            name: "No CountryOld Men",
             poster:
                 "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg",
             rating: 8.1,
@@ -110,29 +169,54 @@ export default function App() {
     const [summary, setSummary] = useState("");
 
 
+
     return (
 
+
         <div className="App">
+            <div className="toggle">
+                <ToggleButton value="laptop" aria-label="laptop">
+                    <LaptopIcon />
+                </ToggleButton>
+                <ToggleButton value="tv" aria-label="tv">
+                    <TvIcon />
+                </ToggleButton>
+                <ToggleButton value="phone" aria-label="phone">
+                    <PhoneAndroidIcon />
+                </ToggleButton>
+            </div>
+
             <Box sx={{ '& > :not(style)': { m: 1 } }}>
                 {<div className="add-movie-form">
                     <TextField
+                        className="inputfield"
                         fullWidth label="Enter Movie Name" type="text"
                         value={name}
-                        onChange={(event) => setName(event.target.value)} />
+                        onChange={(event) => setName(event.target.value)}
+                        variant="filled" />
 
-                    <TextField fullWidth label="Enter Poster URL" type="text"
+                    <TextField
+                        className="inputfield"
+                        variant="filled"
+                        fullWidth label="Enter Poster URL" type="text"
                         value={poster}
                         onChange={(event) => setPoster(event.target.value)}
                     />
 
 
-                    <TextField fullWidth label="Enter Movie Ratings" type="text"
+                    <TextField
+                        className="inputfield"
+                        variant="filled"
+                        fullWidth label="Enter Movie Ratings" type="text"
                         value={rating}
                         onChange={(event) => setRating(event.target.value)}
                     />
 
 
-                    <TextField fullWidth label="Write Movie Summary" type="text"
+                    <TextField
+                        className="inputfield"
+                        variant="filled"
+                        fullWidth label="Write Movie Summary" type="text"
                         value={summary}
                         onChange={(event) => setSummary(event.target.value)}
                     />
@@ -160,7 +244,7 @@ export default function App() {
             </Box>
 
 
-            <MovieList movies={movieList} />
+            <MovieList movies={movieList} setMovieList={setMovieList} />
 
         </div >
     );
@@ -168,7 +252,7 @@ export default function App() {
 }
 
 
-export function Movie({ name, poster, rating, summary }) {
+export function Movie({ name, poster, rating, summary, deleteButton }) {
     //conditional styling
     const style = rating >= 8.5 ? {
         color: 'green'
@@ -194,15 +278,20 @@ export function Movie({ name, poster, rating, summary }) {
             <Button onClick={() => setShow(!show)} variant="contained" disableElevation>
                 Summary
             </Button>
+
             <Button variant="outlined" color="error" startIcon={<DeleteIcon />}>
-                Delete
+                {deleteButton}
             </Button>
+
             {/* <q style={description} className="summary">{summary}</q> */}
             {/* {show ? <q className="summary">{summary}</q> : ""} */}
 
             {/* {conditional rendering} */}
             {show ? <q className="summary">{summary}</q> : ""}
 
+            <div>
+
+            </div>
 
         </div>
 

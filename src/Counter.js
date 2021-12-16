@@ -23,10 +23,11 @@ export function Counter() {
     const [dislike, setDisLike] = useState(0);
     return (
         <div>
-            <Button onClick={() => { setLike(like + 1); }} variant="outlined">👍</Button>
-            <h2>{like}</h2>
-            <Button onClick={() => { setDisLike(dislike + 1); }} variant="outlined">👎</Button>
-            <h2>{dislike}</h2>
+            <Button onClick={() => { setLike(like + 1); }} variant="outlined"><i class="fas fa-thumbs-up"></i><h2>{like}</h2></Button>
+
+            <Button onClick={() => { setDisLike(dislike + 1); }} variant="outlined"><i class="fas fa-thumbs-down"></i><h2>{dislike}</h2></Button>
+
+
 
         </div>
     );
